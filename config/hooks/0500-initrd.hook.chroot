@@ -1,0 +1,10 @@
+#!/bin/bash -x
+for i in boot/vmlinuz* ; do
+    kernel="$(basename "$i")"
+    version="${kernel##vmlinuz-}"
+    initrd="boot/initrd.img-${version}"
+    [ -f "$initrd" ] || update-initramfs -c -k "$version" || true
+    flash-kernel
+    cp /usr/lib/linux-image-$version/sun5i-r8-chip.dtb /boot/
+    cp /boot/vm* /boot/zImage
+done

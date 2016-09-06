@@ -1,0 +1,8 @@
+live-image-armhf*
+binary/
+chroot/
+local
+.build
+auto
+cache
+server-rootfs.tar.gz
