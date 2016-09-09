@@ -91,14 +91,20 @@ UBOOT_SCRIPT_SRC="$PWD/build-serv/uboot-fastboot.cmds"
 UBOOT_SCRIPT="$PWD/build-serv/uboot-fastboot.scr"
 METHOD=""
 
+#ay
+rm live-image-armhf.tar.tar
+
 prepare_uboot_script
 
 mkdir -p img-serv-fb/images
-cp build-serv/padded-u-boot-dtb.bin 	img-serv-fb/images/padded-u-boot
-cp build-serv/sunxi-spl.bin 			img-serv-fb/images/
-cp build-serv/sunxi-spl-with-ecc.bin 	img-serv-fb/images/
-cp build-serv/server-sparse.ubi 		img-serv-fb/images/rootfs.ubi
-cp build-serv/uboot-fastboot.scr 		img-serv-fb/images/uboot.scr
-cp build-serv/u-boot-dtb.bin 			img-serv-fb/images/
+mv build-serv/padded-u-boot-dtb.bin 		img-serv-fb/images/padded-u-boot
+mv build-serv/sunxi-spl.bin 			img-serv-fb/images/
+mv build-serv/sunxi-spl-with-ecc.bin 		img-serv-fb/images/
+mv build-serv/server-sparse.ubi 		img-serv-fb/images/rootfs.ubi
+mv build-serv/uboot-fastboot.scr 		img-serv-fb/images/uboot.scr
+mv build-serv/u-boot-dtb.bin 			img-serv-fb/images/
 
-tar -zvcf img-serv-fb.tar.gz img-serv-fb
+#ay
+rm -rf build-serv
+
+#tar -zvcf img-serv-fb.tar.gz img-serv-fb
