@@ -47,4 +47,4 @@ img2simg build-serv/server-rootfs.ubi.img build-serv/server-sparse.ubi ${UBI_BLO
 
 rm *.bin
 
-tar -zcf build-serv.tar.gz build-serv
+#tar -zcf build-serv.tar.gz build-serv
